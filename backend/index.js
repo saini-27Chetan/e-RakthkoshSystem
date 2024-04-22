@@ -4,8 +4,8 @@ const mysql = require('mysql');
 const app = express();
 
 // Nodemailer transporter setup
-const userMail = "chetan27saini@gmail.com";   // Your email Id
-const appPassCode = "aujpgtupukanteei";       // Your app password, generate it form the respective application
+const userMail = "";   // Your email Id
+const appPassCode = "";       // Your app password, generate it form the respective application
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   host: "smtp.gmail.com",
@@ -260,7 +260,7 @@ app.put('/api/admin/update/:pageText', (req, res) => {
 // Function to send acceptance email
 function sendAcceptanceEmail(recipientEmail, type, recipientName) {
   const mailOptions = {
-    from: 'E-RakthKosh Admin <chetan27saini@gmail.com>',
+    from: `E-RakthKosh Admin <${userMail}>`,
     to: recipientEmail,
     subject: `Blood ${type} Request Accepted`,
     html: `<div>
@@ -288,7 +288,7 @@ function sendAcceptanceEmail(recipientEmail, type, recipientName) {
 // Function to send rejection email
 function sendRejectionEmail(recipientEmail, type, recipientName) {
   const mailOptions = {
-    from: `E-RakthKosh Admin <chetan27saini@gmail.com>`,
+    from: `E-RakthKosh Admin <${userMail}>`,
     to: recipientEmail,
     subject: `Blood ${type} Request Rejected`,
     html: `<div>
