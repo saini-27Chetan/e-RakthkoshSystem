@@ -40,8 +40,8 @@ connection.on('error', function (err) {
   console.error("Database connection error:", err.message);
 });
 
-app.listen(3000, function () {
-  console.log('Server running on port 3000');
+app.listen(3005, function () {
+  console.log('Server running on port 3005');
 });
 
 // Query to use our e_rakthkosh_db  (Optional: as we are giving the name of our database in the connection itself)
