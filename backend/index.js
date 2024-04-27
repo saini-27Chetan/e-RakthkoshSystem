@@ -19,11 +19,11 @@ const transporter = nodemailer.createTransport({
 
 app.use(express.json());
 const connection = mysql.createConnection({
-  host: 'e-rakthkosh-system-database.cz40woq2urck.ap-southeast-1.rds.amazonaws.com',
-  port: 3306,
-  user: 'admin',
-  password: 'admin#123456',
-  database: 'e_rakthkosh_db'
+  host: '',   // hostname 
+  port: 3306, // port number
+  user: '',   // username
+  password: '', // password
+  database: ''  // name of the database which will be used
 });
 
 // Attempt to connect to the database
@@ -260,7 +260,7 @@ app.put('/api/admin/update/:pageText', (req, res) => {
 // Function to send acceptance email
 function sendAcceptanceEmail(recipientEmail, type, recipientName) {
   const mailOptions = {
-    from: `E-RakthKosh Admin <${userMail}>`,
+    from: 'E-RakthKosh Admin <chetan27saini@gmail.com>',
     to: recipientEmail,
     subject: `Blood ${type} Request Accepted`,
     html: `<div>
@@ -288,7 +288,7 @@ function sendAcceptanceEmail(recipientEmail, type, recipientName) {
 // Function to send rejection email
 function sendRejectionEmail(recipientEmail, type, recipientName) {
   const mailOptions = {
-    from: `E-RakthKosh Admin <${userMail}>`,
+    from: `E-RakthKosh Admin <chetan27saini@gmail.com>`,
     to: recipientEmail,
     subject: `Blood ${type} Request Rejected`,
     html: `<div>
